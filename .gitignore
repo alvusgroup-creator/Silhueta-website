@@ -1,0 +1,10 @@
+# Materiais internos (não publicar)
+Briefing_Web_Design_Silhueta.pdf
+REFENCIA*.pdf
+REFERENCIA*.pdf
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/

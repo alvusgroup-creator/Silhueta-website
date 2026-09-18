@@ -1,0 +1,19 @@
+Fotografias provisórias (Pexels, Licença Pexels; particulares e escadas via Openverse, CC0).
+Substituir por fotografias reais mantendo o nome do ficheiro (proporção 4:3, 640x480).
+
+lavagem.webp            https://www.pexels.com/photo/anonymous-woman-loading-clothes-in-washing-machine-7282376/
+passar-a-ferro.webp     https://www.pexels.com/photo/crop-housewife-ironing-white-clothes-on-ironing-board-4467905/
+limpeza-a-seco.webp     https://www.pexels.com/photo/clothes-hanged-on-clothes-rack-3965545/
+costura.webp            https://www.pexels.com/photo/man-sewing-a-fabric-7776123/
+carpetes.webp           https://www.pexels.com/photo/a-living-room-with-center-table-and-carpet-in-the-middle-7546213/
+casacos-de-peles.webp   https://www.pexels.com/photo/black-coat-hanging-on-silver-rack-6045058/  (casaco comum, não de peles)
+impermeaveis.webp       https://www.pexels.com/photo/brown-coat-on-clothes-hanger-8274730/
+particulares.webp       Rawpixel sk5896 (CC0) — cozinha branca
+alojamento-local.webp   https://www.pexels.com/photo/housekeeper-cleaning-the-bed-9462320/
+escritorios.webp        https://www.pexels.com/photo/an-empty-office-8477444/
+lojas.webp              https://www.pexels.com/photo/interior-of-modern-clothes-shop-with-counter-6044231/
+farmacias.webp          https://www.pexels.com/photo/14797864/
+armazens.webp           https://www.pexels.com/photo/interior-of-warehouse-10697106/
+garagens.webp           https://www.pexels.com/photo/empty-concrete-parking-lot-3095713/
+escadas.webp            StockSnap O1SC8XTWTL (CC0) — escada com corrimão
+fim-de-obra.webp        https://www.pexels.com/photo/empty-room-of-modern-apartment-7031599/

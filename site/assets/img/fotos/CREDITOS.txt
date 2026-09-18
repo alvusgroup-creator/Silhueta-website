@@ -1,0 +1,11 @@
+Fotografias provisórias de bancos de imagens gratuitos. Substituir por fotografias reais da Silhueta
+mantendo o nome do ficheiro e a proporção.
+
+hero-desktop-*.webp / hero-mobile.webp — Pexels 9462346 "A Happy Housekeeper Tidying a Bed"
+  https://www.pexels.com/photo/a-happy-housekeeper-tidying-a-bed-9462346/
+  (desktop: prolongada à esquerda com preenchimento desfocado)
+
+sobre-limpeza.webp — Pexels 4021256 "Person Wearing Blue Gloves Cleaning"
+  https://www.pexels.com/photo/person-wearing-blue-gloves-cleaning-4021256/
+sobre-toalhas.webp — Pexels 12679 "White Towel"
+  https://www.pexels.com/photo/towels-bath-bathroom-12679/
