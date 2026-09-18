@@ -9,3 +9,6 @@ sobre-limpeza.webp — Pexels 4021256 "Person Wearing Blue Gloves Cleaning"
   https://www.pexels.com/photo/person-wearing-blue-gloves-cleaning-4021256/
 sobre-toalhas.webp — Pexels 12679 "White Towel"
   https://www.pexels.com/photo/towels-bath-bathroom-12679/
+
+mapa-cascais-*.webp — Mapa © OpenStreetMap contributors (ODbL), tiles z14 combinados e recoloridos.
+  Atribuição obrigatória visível na página (canto do mapa). https://www.openstreetmap.org/copyright

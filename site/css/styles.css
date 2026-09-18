@@ -985,113 +985,352 @@ h3 {
   .case-card:hover .case-go { animation: jelly .7s .15s both; }
 }
 
-/* ---------- 07 Como funciona ---------- */
+/* ---------- 07 Como funciona (passos com ícone e ligação) ---------- */
 
 .steps { padding: 0 0 var(--section); }
+.steps-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
 .steps h2 { color: var(--navy); }
+
 .step-list {
+  --ico: 96px;
   display: grid;
-  gap: 2rem;
-  margin-top: 2.5rem;
-  counter-reset: step;
+  gap: 2.5rem;
+  counter-reset: none;
 }
 @media (min-width: 760px) {
-  .step-list { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .step-list { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 }
 .step-list li {
-  counter-increment: step;
-  padding-top: 1.5rem;
-  border-top: 2px solid var(--navy);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.step-list li::before {
-  content: counter(step);
-  display: block;
-  margin-bottom: 1rem;
+
+.step-ico {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--ico); height: var(--ico);
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background: var(--blue-ink);
+  color: var(--white);
+  box-shadow: 0 18px 36px -18px rgba(0, 114, 198, .7);
+}
+.step-ico .ico { width: 40px; height: 40px; stroke-width: 1.5; }
+.step-num {
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  margin-top: -24px;
+  border-radius: 50%;
+  border: 4px solid var(--bg);
+  background: var(--light-blue);
+  color: var(--navy);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 2.75rem;
-  line-height: 1;
-  color: var(--blue);
+  font-size: 1rem;
 }
-.step-list h3 { color: var(--navy); }
-.step-list p { margin-top: .35rem; color: var(--muted); max-width: 20rem; }
+.step-list h3 { color: var(--navy); font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+.step-list p { margin-top: .4rem; max-width: 18rem; color: var(--muted); font-size: .9375rem; }
 
-/* ---------- 08 Cascais ---------- */
+/* Linha de ligação entre passos (desktop/tablet): desenha-se ao entrar */
+@media (min-width: 760px) {
+  .step-list li + li::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--ico) / 2);
+    right: calc(50% + var(--ico) / 2 + 40px);
+    width: calc(100% + 2rem - var(--ico) - 80px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--line), #9FB6CA, var(--line));
+    transform-origin: left center;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .step-list li.reveal + li.reveal::before { transform: scaleX(0); transition: transform .8s var(--ease) .35s; }
+  .step-list li.reveal + li.reveal.is-in::before { transform: scaleX(1); }
+}
+/* Telemóvel: pequena linha vertical entre passos */
+@media (max-width: 759px) {
+  .step-list li + li::before {
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    width: 2px;
+    height: 1.75rem;
+    margin-top: .375rem;
+    background: var(--line);
+  }
+}
+
+.steps-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 3rem; }
+@media (max-width: 639px) {
+  .steps-cta .btn { flex: 1 1 100%; }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .step-list li:hover .step-ico { animation: jelly .7s both; }
+}
+
+/* ---------- 08 Cascais (mapa de fundo + caixa) ---------- */
 
 .place {
   position: relative;
-  background: var(--light-blue);
-  padding: var(--section) 0;
+  isolation: isolate;
+  background: #CFE4F5;   /* cor do mar no mapa, enquanto a imagem carrega */
+}
+.place-media {
+  position: relative;
+  height: 340px;
   overflow: hidden;
 }
-.flow-place {
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.place-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 34% 52%;   /* ponto de Cascais na imagem */
 }
-.flow-place path { stroke: var(--white); stroke-width: 3; }
+.place-pin {
+  position: absolute;
+  left: 34%; top: 52%;
+  z-index: 1;
+}
+.pin-dot {
+  position: absolute;
+  left: -9px; top: -9px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--blue-ink);
+  border: 3px solid var(--white);
+  box-shadow: 0 4px 14px rgba(1, 44, 83, .45);
+}
+.pin-dot::before, .pin-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  opacity: 0;
+}
+.pin-label {
+  position: absolute;
+  left: 16px; top: -34px;
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: .8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px -6px rgba(1, 44, 83, .5);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pin-dot::before, .pin-dot::after { animation: ripple 2.8s ease-out infinite; }
+  .pin-dot::after { animation-delay: 1.4s; }
+}
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: .7; }
+  100% { transform: scale(4.5); opacity: 0; }
+}
+.map-credit {
+  position: absolute;
+  right: .5rem; bottom: .4rem;
+  z-index: 1;
+  padding: .1rem .45rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .8);
+  color: var(--muted);
+  font-size: .6875rem;
+}
+.map-credit a { color: inherit; }
 
-.place-inner {
+.place-inner { position: relative; z-index: 2; margin-top: -4rem; padding-bottom: var(--section); }
+.place-box {
+  max-width: 440px;
+  padding: 1.75rem;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -34px rgba(1, 44, 83, .5);
+}
+.place-box .eyebrow { margin-bottom: .75rem; }
+.place-box h2 { color: var(--navy); font-size: var(--step-3); }
+.place-box p:not(.eyebrow) { margin: .75rem 0 1rem; color: var(--muted); font-size: var(--step-0); line-height: 1.55; }
+
+@media (min-width: 900px) {
+  .place {
+    display: flex;
+    align-items: center;
+    min-height: clamp(480px, 40vw, 620px);
+  }
+  .place-media { position: absolute; inset: 0; height: auto; }
+  .place-inner { margin-top: 0; padding-block: 4rem; display: flex; justify-content: flex-end; }
+  .place-box { padding: 2.25rem; }
+}
+@media (max-width: 899px) {
+  .place { background: var(--bg); }
+  .map-credit { bottom: auto; top: .4rem; }
+  .place-inner { padding-bottom: var(--section); }
+}
+
+/* ---------- 09 Confiança (galeria + testemunhos + Susana) ---------- */
+
+.trust { padding: var(--section) 0; }
+.trust-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.trust-head .eyebrow { margin-bottom: .25rem; }
+.trust h2 { color: var(--navy); }
+.trust-head p:not(.eyebrow) { max-width: 40rem; color: var(--muted); font-size: var(--step-1); text-wrap: balance; }
+
+/* Selo de demonstração (retirar quando houver material real) */
+.demo-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  z-index: 3;
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  background: rgba(1, 44, 83, .82);
+  color: var(--white);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  pointer-events: none;
+}
+
+/* Galeria em mosaico */
+.gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+.gal-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 1;
+  background: var(--light-blue);
+}
+.gal-item:first-of-type, .gal-item:last-of-type { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+@media (min-width: 760px) {
+  .gallery {
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, clamp(150px, 16vw, 230px));
+    gap: 1rem;
+  }
+  .gal-item, .gal-item:first-of-type, .gal-item:last-of-type { aspect-ratio: auto; grid-column: auto; }
+  .gal-item:first-of-type { grid-column: 1; grid-row: 1 / span 2; }
+  .gal-item:last-of-type { grid-column: 3 / span 2; }
+}
+@media (hover: hover) {
+  .gal-item:hover img { transform: scale(1.06); }
+}
+
+/* Testemunhos */
+.testimonials {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 900px) {
+  .testimonials { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+}
+.t-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 3.25rem 1.75rem 1.75rem;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px -32px rgba(1, 44, 83, .45);
+}
+.t-quote {
+  position: absolute;
+  top: .6rem; right: 1.5rem;
+  color: var(--light-blue);
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.t-card blockquote { margin: 0; color: var(--muted); font-style: italic; line-height: 1.6; }
+.t-card figcaption { display: flex; align-items: center; gap: .75rem; margin-top: auto; color: var(--muted); font-size: .875rem; }
+.t-card figcaption strong { display: block; color: var(--navy); font-size: .9375rem; }
+.t-avatar {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--light-blue);
+  color: var(--blue-ink);
+}
+
+/* Fale com a Susana */
+.susana {
   position: relative;
   display: grid;
   gap: 1.5rem;
-}
-@media (min-width: 900px) {
-  .place-inner { grid-template-columns: 1.3fr 1fr; align-items: end; gap: 3rem; }
-}
-.place-word {
-  font-family: var(--font-display);
-  font-size: var(--step-5);
-  font-weight: 600;
-  line-height: .85;
-  letter-spacing: -0.04em;
-  color: var(--navy);
-}
-.place-text h2 { color: var(--navy); font-size: var(--step-2); }
-.place-text p {
-  margin-top: .75rem;
-  max-width: 26rem;
-  color: var(--navy);
-  font-size: var(--step-1);
-  line-height: 1.5;
-}
-
-/* ---------- 09 Confiança ---------- */
-
-.trust { padding: var(--section) 0; }
-.trust-grid { display: grid; gap: 2rem; }
-@media (min-width: 900px) {
-  .trust-grid { grid-template-columns: 5fr 7fr; gap: 4rem; }
-}
-.trust h2 { color: var(--navy); }
-.trust-points li {
-  padding: 1.35rem 0;
-  border-top: 1px solid var(--line);
-}
-.trust-points li:last-child { border-bottom: 1px solid var(--line); }
-.trust-points h3 { color: var(--navy); }
-.trust-points p { margin-top: .25rem; color: var(--muted); }
-
-/* Espaços reservados para provas sociais reais */
-.reserved { margin-top: 3.5rem; }
-.reserved[hidden] { display: none; }
-.reserved-title { color: var(--navy); margin-bottom: 1rem; }
-.reserved-grid { display: grid; gap: 1rem; }
-@media (min-width: 760px) {
-  .reserved-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.reserved-slot {
-  display: grid;
-  place-items: center;
-  min-height: 140px;
-  padding: 1.5rem;
-  border: 1.5px dashed #9FB6CA;
-  border-radius: var(--radius);
-  color: var(--muted);
-  font-size: var(--step--1);
+  justify-items: center;
+  margin-top: 2.5rem;
+  padding: 3rem 1.75rem 2rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--light-blue) 0%, #EAF6FF 100%);
   text-align: center;
 }
-.reserved-photo { aspect-ratio: 4 / 3; background: var(--light-blue); }
+@media (min-width: 900px) {
+  .susana {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: start;
+    gap: 2rem;
+    padding: 2.25rem 2.5rem;
+    text-align: left;
+  }
+}
+.susana-photo {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .25rem;
+  width: 128px; height: 128px;
+  border-radius: 50%;
+  border: 2px dashed #9FB6CA;
+  background: var(--white);
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 600;
+}
+.susana-photo .ico { width: 36px; height: 36px; color: var(--blue-ink); }
+.susana h3 { color: var(--navy); font-family: var(--font-display); font-size: var(--step-2); font-weight: 600; }
+.susana-text p { margin-top: .35rem; color: var(--muted); }
+.susana-text strong { color: var(--navy); }
+.susana-quote { font-style: italic; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .t-card:hover { animation: jelly-soft .8s both; }
+}
 
 /* ---------- 10 CTA final ---------- */
 
@@ -1292,8 +1531,7 @@ h3 {
   .eyebrow:hover { animation: jelly .7s both; }
 
   .benefit-bar li:hover .benefit-ico,
-  .contact-list a:hover .ico,
-  .step-list li:hover::before { animation: jelly .7s both; }
+  .contact-list a:hover .ico { animation: jelly .7s both; }
 
   .svc-card:hover { animation: jelly-soft .8s both; }
 }

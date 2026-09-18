@@ -94,14 +94,16 @@ Linha de marca (interna, orienta a copy):
 - **Um serviço específico** — Fim de obra e carpetes · Peles, impermeáveis e costura — Lavandaria ou Limpeza
 - Cada card: foto + botão redondo com seta → WhatsApp com mensagem do perfil (todo o card é clicável). Hover: gelatina + zoom leve (2,5%). Etiquetas indicam a área, não preços (a cliente não forneceu preços).
 
-### 07 Como funciona
-1. **Fale connosco** — Por WhatsApp, telefone, e-mail ou pelo formulário.
-2. **Conte-nos o que precisa** — O serviço, o local e quando precisa.
-3. **Receba o seu orçamento** — Com base no que nos disser, preparamos o seu orçamento.
+### 07 Como funciona (passos com ícone, centrado)
+- Eyebrow: Como funciona · H2: Pedir um orçamento é simples
+1. **Fale connosco** — Por WhatsApp, telefone, e-mail ou pelo formulário. (ícone: conversa)
+2. **Conte-nos o que precisa** — O serviço, o local e quando precisa. (ícone: lista)
+3. **Receba o seu orçamento** — Com base no que nos disser, preparamos o seu orçamento. (ícone: documento com ✓)
+- Círculo azul com ícone + número 01/02/03; linhas de ligação que se desenham ao entrar; CTAs: Pedir orçamento · Falar no WhatsApp.
 
-### 08 Cascais
-- H2: Em Cascais, perto de si.
-- Texto: A Silhueta está sediada em Cascais. Diga-nos onde fica a sua casa ou o seu espaço e confirmamos consigo.
+### 08 Cascais (mapa de fundo + caixa branca)
+- Fundo: mapa estático da costa de Cascais (© OpenStreetMap, recolorido em azuis da marca) com marcador "Cascais" (centro da vila, não é morada).
+- Caixa: Onde estamos · H2: Em Cascais, perto de si. · "A Silhueta está sediada em Cascais. Diga-nos onde fica a sua casa ou o seu espaço e confirmamos consigo." · link: Confirmar a minha zona (WhatsApp)
 - *(Zonas atendidas: por confirmar com a cliente.)*
 
 ### 09 Confiança

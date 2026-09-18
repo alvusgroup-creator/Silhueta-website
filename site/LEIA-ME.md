@@ -12,7 +12,6 @@ npx http-server site -p 8080
 
 ou a extensão "Live Server" do VS Code. Depois abra http://localhost:8080.
 
-Para ver os espaços reservados para provas sociais: http://localhost:8080/?reservados
 
 ## Onde editar
 
@@ -23,7 +22,7 @@ Para ver os espaços reservados para provas sociais: http://localhost:8080/?rese
 | Foto do hero | `assets/img/fotos/` — substituir mantendo o nome e a proporção (fontes em `CREDITOS.txt`) |
 | Fotos dos serviços | `assets/img/servicos/` — uma por serviço, 4:3 (640×480) |
 | Envio do formulário | `js/main.js`, função `sendQuote()` (ainda não ligada) |
-| Testemunhos, avaliações, fotos reais | `index.html`, secção 09 — preencher e retirar `hidden` |
+| Confiança (secção 09) | Versão de demonstração: fotos ilustrativas em `assets/img/galeria/`, testemunhos de exemplo e espaço para a foto da Susana. Substituir por material real e retirar os selos `.demo-badge` |
 
 ## Pendentes
 

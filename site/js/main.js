@@ -108,7 +108,7 @@
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const groups = [
       ['main section:not(.hero) .wrap > *:not(.cases-grid):not(.step-list):not(.benefit-bar)', 0],
-      ['.benefit-bar > li, .cases-grid > *, .step-list > li, .trust-points > li, .contact-list > li', 90],
+      ['.benefit-bar > li, .cases-grid > *, .step-list > li, .gallery > .gal-item, .testimonials > *, .contact-list > li', 90],
       ['.site-footer .footer-grid > *', 80],
     ];
     const io = new IntersectionObserver((entries) => {
@@ -175,11 +175,6 @@
     }, { threshold: 0.25 }).observe(contact);
   } else {
     quick.forEach((el) => el.classList.add('is-visible'));
-  }
-
-  // Espaços reservados para provas sociais: pré-visualizar com ?reservados
-  if (new URLSearchParams(location.search).has('reservados')) {
-    document.querySelectorAll('[data-reserved]').forEach((el) => { el.hidden = false; });
   }
 
   // Ano no rodapé
