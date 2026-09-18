@@ -113,17 +113,18 @@ Linha de marca (interna, orienta a copy):
 - **Orçamento antes de começar** — Sabe o que vai ser feito antes de avançar.
 - Reservado (escondido até haver material real): testemunhos, avaliações, fotografias de trabalhos, números, certificações. Pré-visualizar com `?reservados` no URL.
 
-### 10 CTA final
-- H2: Diga-nos o que precisa. Nós tratamos do resto.
-- Texto: Peça o seu orçamento para a sua roupa ou para o seu espaço.
-- CTAs: Pedir orçamento · Falar no WhatsApp · +351 933 145 991
+### 10 CTA final + formulário em linha (id="contacto")
+- Fundo claro. H2 "Diga-nos o que precisa. Nós tratamos do resto." | divisória | "Deixe os seus dados e o tipo de serviço. Entramos em contacto para preparar o seu orçamento."
+- Formulário numa linha: Nome · Telefone · Email (opcional) · Serviço · [Pedir orçamento →]. Mensagem removida para manter a linha curta.
+- "Prefere falar já? WhatsApp ou +351 933 145 991". Decoração à direita (desktop largo): toalhas a esbater + bolhas.
 
-### 11 Contacto
-- H2: Peça o seu orçamento
-- Texto: Preencha o formulário ou fale connosco diretamente.
-- Campos: Nome · Telefone · Email (opcional) · Tipo de serviço (Lavandaria, Limpeza, Alojamento Local, Limpeza de fim de obra, Empresa, Outro) · Mensagem (opcional)
-- Botão: Pedir orçamento
-- Dados: WhatsApp / Telefone +351 933 145 991 · susana-iris@hotmail.com · Cascais, Portugal · Responsável: Susana Araujo Romero
+### Rodapé (claro)
+- Logótipo a cores + frase · Serviços · Silhueta (Sobre, Para quem, Como funciona, Pedir orçamento) · Contacto (telefone, e-mail, Cascais) · Fale connosco (botão WhatsApp) · ©.
+- Sem newsletter, redes sociais nem links legais até existirem.
+
+### Popups
+- **Pedir orçamento** (todos os botões com esse texto): abre popup com formulário completo (Nome, Telefone, Email, Tipo de serviço, Mensagem). Sem JS, leva ao formulário da secção final.
+- **Saída** (1× por visita, nunca nos primeiros 6 s): desktop — rato sai pelo topo; telemóvel — sobe depressa depois de ler metade da página. "Antes de ir… 10% de desconto na primeira limpeza" (**valor de exemplo, a confirmar**) → "Quero aproveitar" abre o formulário com Limpeza pré-selecionada; ou WhatsApp.
 
 ## 5. Design system
 
@@ -169,3 +170,19 @@ Azul forte usado com moderação: um botão primário por zona, detalhes finos.
 **Mobile**
 - Hero reorganizado: texto e CTAs primeiro, imagem depois.
 - Barra fixa inferior (Pedir orçamento + WhatsApp) após o hero. No desktop, botão flutuante de WhatsApp.
+
+## 6. Versão roxa (site-roxo/)
+Cópia integral do site com a paleta derivada do logótipo lilás "Silhueta Genial". A versão azul continua em site/.
+
+| Token | Azul | Roxo |
+|---|---|---|
+| navy (estrutura) | #012C53 | #2D1E4F |
+| blue (decorativo) | #0087E9 | #8E72D6 |
+| blue-ink (botões, AA 6,4:1) | #0072C6 | #6A4BB5 |
+| blue-soft (sobre escuro) | #5CB8FF | #C8B6F4 |
+| light-blue | #DFF3FF | #EFE9FB |
+| bg | #F7FAFC | #FAF8FD |
+| text | #0B1F33 | #1E1630 |
+| muted | #5B6B80 | #645A7A |
+
+Mapa de Cascais recolorido em lilás. Logótipo roxo aplicado (header, versão branca sobre o hero, rodapé, ícones e favicon). Originais em LOGO ROXA HORIZONTAL.png / LOGO ROXA VERTICAL.png na raiz do projeto.
