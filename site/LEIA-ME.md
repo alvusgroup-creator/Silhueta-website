@@ -31,3 +31,19 @@ ou a extensão "Live Server" do VS Code. Depois abra http://localhost:8080.
 - Zonas atendidas (secção 08), se a cliente as confirmar.
 - Livro de Reclamações Eletrónico e política de privacidade, se aplicável.
 - Destino do formulário.
+
+## Pré-visualização bloqueada (ativa)
+
+A página está em modo de pré-visualização para mostrar ao cliente: só o topo, o "Sobre" e os
+serviços aparecem; o resto está desfocado e o rodapé escondido.
+
+**Desbloquear (3 passos, em `index.html`):**
+1. apagar a `<div id="locked" inert aria-hidden="true">` e a `</div>` que a fecha (antes de `</main>`);
+2. apagar a `<section class="preview-unlock" ...> ... </section>`;
+3. tirar o `hidden` de `<footer class="site-footer" hidden>`.
+
+Opcional: repor `href="#contacto"` e `data-quote` nos botões "Pedir orçamento" e nos links
+"Como funciona"/"Contacto" do menu (procurar por `#preview-unlock`), e apagar a secção
+"Pré-visualização bloqueada" no fim de `css/styles.css`.
+
+O bloqueio é **apenas visual**: o conteúdo continua no código da página.

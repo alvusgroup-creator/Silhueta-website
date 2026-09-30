@@ -8,3 +8,7 @@ REFERENCIA*.pdf
 Thumbs.db
 desktop.ini
 node_modules/
+
+# Pacotes para upload (gerados)
+publicar/
+silhueta-hostinger.zip
